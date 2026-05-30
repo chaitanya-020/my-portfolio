@@ -28,7 +28,7 @@ export default function Contact() {
               </a>
             </Button>
             <Button asChild variant="secondary" size="lg">
-              < a href={personal.socials.linkedin} target="_blank" rel="noopener noreferrer">
+              < a href={personal.socials.linkedin} target="https://www.linkedin.com/in/gelivi-sai-chaitanya/" rel="noopener noreferrer">
                 <Linkedin className="w-4 h-4" />
                 Connect on LinkedIn
               </a>

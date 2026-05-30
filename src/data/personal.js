@@ -7,7 +7,7 @@ export const personal = {
   location: 'Norman, Oklahoma',
   email: 'chaitanyagelivi03@gmail.com',
   phone: '(405) 413-2430',
-  resumeUrl: '/my-portfolio/resume.pdf',
+  resumeUrl: '/resume.pdf',
   socials: {
     github: 'https://github.com/chaitanya-020',
     linkedin: 'https://www.linkedin.com/in/gelivi-sai-chaitanya/',

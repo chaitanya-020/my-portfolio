@@ -52,7 +52,7 @@ export const projects = [
       github: 'https://github.com/chaitanya-020/TrackR',
       demo: 'https://trackr-rouge.vercel.app/',
     },
-    image: '/my-portfolio/projects/trackr/dashboard-dark.png',
+    image: '/projects/trackr/dashboard-dark.png',
     // comingSoon flag removed — project is live
   },
   {

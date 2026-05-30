@@ -52,7 +52,7 @@ export default function About() {
                 Currently exploring
               </p>
               <p className="text-sm text-foreground">
-                Vector databases, distributed systems, full-stack engineering
+                Full-stack, Data Science, Machine Learning Engineering and anything that pushes the boundary of what's possible with databases and ML.
               </p>
             </div>
           </div>
