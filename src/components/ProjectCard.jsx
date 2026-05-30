@@ -23,30 +23,46 @@ export default function ProjectCard({ project, reverse = false }) {
           className="block relative overflow-hidden rounded-xl border border-border bg-surface group hover:border-accent/50 transition-all duration-300"
         >
           <div className="aspect-[16/10] bg-gradient-to-br from-surface to-surface-elevated relative overflow-hidden">
-            {/* Decorative pattern */}
-            <div className="absolute inset-0 grid-bg opacity-30" aria-hidden="true" />
+          {project.image ? (
+            <>
+              {/* Actual screenshot */}
+              <img
+                src={project.image}
+                alt={`${project.title} screenshot`}
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 ease-out-expo group-hover:scale-[1.02]"
+                loading="lazy"
+              />
+              {/* Subtle dark overlay for depth */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
+                    </>
+                  ) : (
+                    <>
+                      {/* Decorative pattern */}
+                      <div className="absolute inset-0 grid-bg opacity-30" aria-hidden="true" />
 
-            {/* Centered project title (placeholder for screenshot) */}
-            <div className="absolute inset-0 flex items-center justify-center p-8">
-              <div className="text-center max-w-md">
-                <p className="font-mono text-xs text-accent mb-2">
-                  /projects/{project.slug}
-                </p>
-                <h4 className="text-h3 font-semibold text-foreground/80 group-hover:text-foreground transition-colors">
-                  {project.title}
-                </h4>
-              </div>
-            </div>
+                      {/* Centered project title (placeholder) */}
+                      <div className="absolute inset-0 flex items-center justify-center p-8">
+                        <div className="text-center max-w-md">
+                          <p className="font-mono text-xs text-accent mb-2">
+                            /projects/{project.slug}
+                          </p>
+                          <h4 className="text-h3 font-semibold text-foreground/80 group-hover:text-foreground transition-colors">
+                            {project.title}
+                          </h4>
+                        </div>
+                      </div>
+                    </>
+                  )}
 
-            {/* Hover overlay */}
-            <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-300" />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-300 pointer-events-none" />
 
-            {/* "Read case study" pill */}
-            <div className="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-border text-xs font-mono text-foreground opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-              Read case study
-              <ArrowUpRight className="w-3 h-3" />
-            </div>
-          </div>
+                  {/* "Read case study" pill */}
+                  <div className="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-border text-xs font-mono text-foreground opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                    Read case study
+                    <ArrowUpRight className="w-3 h-3" />
+                  </div>
+                </div>
         </Link>
       </div>
 
