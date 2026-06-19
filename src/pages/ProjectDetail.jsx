@@ -97,8 +97,8 @@ export default function ProjectDetail() {
               <div className="flex gap-2">
                 {project.links.github && (
                   <Button asChild variant="outline" size="sm">
-                    < a
-                      href={project.links.github}
+                    
+                    <a  href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -108,30 +108,35 @@ export default function ProjectDetail() {
                   </Button>
                 )}
                 {project.links.demo && (
-                <Button asChild variant="outline" size="sm">
-                    < a
-                    href={project.links.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Button asChild variant="outline" size="sm">
+                    
+                    <a  href={project.links.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                    <ExternalIcon className="w-3.5 h-3.5" />
-                    Demo
+                      <ExternalIcon className="w-3.5 h-3.5" />
+                      Demo
                     </a>
-                </Button>
+                  </Button>
                 )}
                 {project.links.paper && (
-                <Button asChild variant="outline" size="sm">
-                    < a
-                    href={project.links.paper}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Button asChild variant="outline" size="sm">
+                    
+                    <a  href={project.links.paper}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                    <ExternalIcon className="w-3.5 h-3.5" />
-                    Paper
+                      <ExternalIcon className="w-3.5 h-3.5" />
+                      Paper
                     </a>
-                </Button>
+                  </Button>
                 )}
               </div>
+              {project.demoNote && (
+                <p className="text-xs text-muted-foreground mt-2 italic">
+                  {project.demoNote}
+                </p>
+              )}
             </div>
           </div>
         </FadeIn>
@@ -203,8 +208,8 @@ export default function ProjectDetail() {
             <div className="flex flex-wrap items-center justify-center gap-3">
               {project.links.github && (
                 <Button asChild>
-                  < a
-                    href={project.links.github}
+                  
+                  <a  href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -215,28 +220,28 @@ export default function ProjectDetail() {
               )}
               {project.links.demo && (
                 <Button asChild variant="secondary">
-                    < a
-                    href={project.links.demo}
+                  
+                  <a  href={project.links.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    >
+                  >
                     <ExternalIcon className="w-4 h-4" />
                     Live Demo
-                    </a>
+                  </a>
                 </Button>
-                )}
-                {project.links.paper && (
+              )}
+              {project.links.paper && (
                 <Button asChild variant="secondary">
-                    < a
-                    href={project.links.paper}
+                  
+                  <a  href={project.links.paper}
                     target="_blank"
                     rel="noopener noreferrer"
-                    >
+                  >
                     <ExternalIcon className="w-4 h-4" />
                     Read Paper
-                    </a>
+                  </a>
                 </Button>
-                )}
+              )}
             </div>
           </section>
         </FadeIn>

@@ -20,6 +20,45 @@ export const projects = [
     },
     image: null,
   },
+
+  {
+    slug: 'tutorhub',
+    featured: true,
+    title: 'TutorHub — Multi-Tenant SaaS API',
+    tagline: 'A multi-tenant SaaS REST API where many tutoring academies share one deployment but can never see each other\'s data.',
+    description: "TutorHub is a production-style REST API that models a SaaS tutoring platform. Each academy is a tenant with its own staff, students, courses, and grading workflow — fully isolated from every other academy running on the same instance. The headline engineering challenge is access control at two levels simultaneously: cross-tenant isolation (Academy A can't see Academy B's data, and foreign-tenant requests return 404 rather than leaking that the resource exists) and per-student scoping within an academy. The security model is verified by integration tests that boot a real PostgreSQL database — proven, not just claimed.",
+    period: '2026',
+    role: 'Solo project · Backend engineering',
+    tech: [
+      'Java 21',
+      'Spring Boot 3.5',
+      'PostgreSQL 17',
+      'Spring Security',
+      'JWT',
+      'Flyway',
+      'Docker',
+      'Testcontainers',
+      'GitHub Actions',
+      'Render',
+    ],
+    highlights: [
+      'Two-layer access control: cross-tenant isolation between academies plus per-user row-level scoping within an academy. Foreign-tenant resources return 404, not 403, so existence is never leaked.',
+      'Per-academy RBAC with five roles (Director, Coordinator, Tutor, Assistant, Student) resolved per request — the same person can be a director in one academy and a student in another.',
+      'Optimistic locking on grading: concurrent grade submissions on a stale version return HTTP 409 Conflict instead of silently overwriting, preventing lost updates.',
+      'Scheduled async email reminders: a cron job finds assignments due within 24 hours and emails enrolled students asynchronously, with a sent-timestamp guard to prevent duplicates.',
+      'Proven by tests, not promises: Mockito unit tests plus Testcontainers integration tests that spin up real PostgreSQL in Docker and assert isolation, scoping, and optimistic-lock behavior end-to-end.',
+      'Automated CI/CD: GitHub Actions runs the full test suite on every push; containerized with Docker and deployed to a live public URL.',
+    ],
+    links: {
+      github: 'https://github.com/chaitanya-020/tutorhub',
+      demo: 'https://tutorhub-j2wq.onrender.com/swagger-ui.html',
+    },
+    image: '/projects/tutorhub/swagger-ui.png',
+    demoNote: 'Live demo is on a free tier that sleeps when idle — first request may take ~30s to wake.',
+  },
+
+
+
   {
     slug: 'trackr',
     featured: true,
@@ -57,7 +96,7 @@ export const projects = [
   },
   {
     slug: 'secure-chat',
-    featured: true,
+    featured: false,
     title: 'Secure Multi-Client Chat',
     tagline: 'End-to-end encrypted peer-to-peer messaging with key rotation and zero-trust server design.',
     description: 'A peer-to-peer encrypted chat system with a multi-threaded Python server and Tkinter GUI client. Built around the principle that the server should never see plaintext — it acts as a blind relay while clients handle all encryption and key management.',
